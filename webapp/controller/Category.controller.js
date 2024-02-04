@@ -27,7 +27,7 @@ sap.ui.define([
                
              
                 if(sValue){
-                    var sTrimmedData = sValue.substr(104);
+                    var sTrimmedData = sValue.substr(104)
                     return "data:image/bmp;base64," + sTrimmedData
                    // return "data:image/png;base64,"+sValue;
                 }
