@@ -1,0 +1,44 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.OrderDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <Table items="{orderDetailsModel>/}" id="orderDetailsTable"> 
+        <columns>
+        <Column >
+         <Text text="OrderID"/>
+        </Column>
+       <Column >
+       <Text text="ProductID"/>
+       </Column>
+       <Column >
+       <Text text="UnitPrice"/>
+       </Column>
+       <Column >
+       <Text text="Quantity"/>
+       </Column>
+        <Column >
+       <Text text="Discount"/>
+       </Column> 
+          </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{orderDetailsModel>OrderID}"/>
+                    <Text text="{orderDetailsModel>ProductID}"/>
+                    <Text text="{orderDetailsModel>UnitPrice}"/>
+                    <Text text="{orderDetailsModel>Quantity}"/>
+                    <Text text="{orderDetailsModel>Discount}"/>
+                   
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

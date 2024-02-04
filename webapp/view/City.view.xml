@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.City"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <Table items="{cityModel>/}" id="cityTable"> 
+        <columns>
+        <Column >
+         <Text text="City"/>
+        </Column>
+       <Column >
+       <Text text="Company Name"/>
+       </Column>
+       <Column >
+       <Text text="Contact Name"/>
+       </Column>
+       <Column >
+       <Text text="Relationship"/>
+       </Column>
+       
+       
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{cityModel>City}"/>
+                    <Text text="{cityModel>CompanyName}"/>
+                    <Text text="{cityModel>ContactName}"/>
+                    <Text text="{cityModel>Relationship}"/>
+                   
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,350 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "sap.com.northwinderp",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.5",
+      "toolsId": "dc65e605-8042-4e35-8c42-d31fe869d765"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.4",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.com.northwinderp.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "sap.com.northwinderp.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": "",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "RouteCategory",
+          "pattern": "Category",
+          "target": [
+            "TargetCategory"
+          ]
+        },
+        {
+          "name": "RouteSummarySales",
+          "pattern": "SummarySales",
+          "target": [
+            "TargetSummarySales"
+          ]
+        },
+        {
+          "name": "RouteCustomer",
+          "pattern": "Customer",
+          "target": [
+            "TargetCustomer"
+          ]
+        },
+        {
+          "name": "RouteEmployees",
+          "pattern": "Employees",
+          "target": [
+            "TargetEmployees"
+          ]
+        },
+        {
+          "name": "RouteOrderDetails",
+          "pattern": "OrderDetails",
+          "target": [
+            "TargetOrderDetails"
+          ]
+        },
+        {
+          "name": "RouteOrders",
+          "pattern": "Orders",
+          "target": [
+            "TargetOrders"
+          ]
+        },
+        {
+          "name": "RouteProducts",
+          "pattern": "Products",
+          "target": [
+            "TargetProducts"
+          ]
+        },
+        {
+          "name": "RouteRegion",
+          "pattern": "Region",
+          "target": [
+            "TargetRegion"
+          ]
+        },
+        {
+          "name": "RouteShippers",
+          "pattern": "Shippers",
+          "target": [
+            "TargetShippers"
+          ]
+        },
+        {
+          "name": "RouteSuppliers",
+          "pattern": "Suppliers",
+          "target": [
+            "TargetSuppliers"
+          ]
+        },
+        {
+          "name": "RouteTerritories",
+          "pattern": "Territories",
+          "target": [
+            "TargetTerritories"
+          ]
+        },
+        {
+          "name": "RouteProductlist",
+          "pattern": "Productlist",
+          "target": [
+            "TargetProductlist"
+          ]
+        },
+        {
+          "name": "RouteCategorySales",
+          "pattern": "CategorySales",
+          "target": [
+            "TargetCategorySales"
+          ]
+        },
+        {
+          "name": "RouteCurrentProduct",
+          "pattern": "CurrentProduct",
+          "target": [
+            "TargetCurrentProduct"
+          ]
+        },
+        {
+          "name": "RouteCity",
+          "pattern": "City",
+          "target": [
+            "TargetCity"
+          ]
+        },
+        {
+          "name": "RouteInvoices",
+          "pattern": "Invoices",
+          "target": [
+            "TargetInvoices"
+          ]
+        }
+        
+
+        
+      ],
+      "targets": {
+        "TargetHome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Home",
+          "viewName": "Home"
+        },
+        "TargetCategory": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Category",
+          "viewName": "Category"
+        },
+        "TargetSummarySales": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "SummarySales",
+          "viewName": "SummarySales"
+        },
+        "TargetCustomer": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Customer",
+          "viewName": "Customer"
+        },
+        "TargetEmployees": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Employees",
+          "viewName": "Employees"
+        },
+        "TargetOrderDetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "OrderDetails",
+          "viewName": "OrderDetails"
+        },
+        "TargetOrders": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Orders",
+          "viewName": "Orders"
+        },
+        "TargetProducts": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Products",
+          "viewName": "Products"
+        },
+        "TargetRegion": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Region",
+          "viewName": "Region"
+        },
+        "TargetShippers": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Shippers",
+          "viewName": "Shippers"
+        },
+        "TargetSuppliers": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Suppliers",
+          "viewName": "Suppliers"
+        },
+        "TargetTerritories": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Territories",
+          "viewName": "Territories"
+        },
+        "TargetProductlist": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Productlist",
+          "viewName": "Productlist"
+        },
+         "TargetCategorySales": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CategorySales",
+          "viewName": "CategorySales"
+        },
+        "TargetCurrentProduct": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CategorySales",
+          "viewName": "CategorySales"
+        },
+       
+        "TargetCity": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "City",
+          "viewName": "City"
+        },
+        "TargetInvoices": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Invoices",
+          "viewName": "Invoices"
+        }
+        
+      }
+    },
+    "rootView": {
+      "viewName": "sap.com.northwinderp.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

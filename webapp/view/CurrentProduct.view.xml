@@ -1,0 +1,34 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.CurrentProduct"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <Table items="{currentProductsModel>/}" id="currentProductsTable"> 
+        <columns>
+        <Column >
+         <Text text="Product ID "/>
+        </Column>
+       <Column >
+       <Text text="Product Name  "/>
+       </Column>
+       
+       
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{currentProductsModel>ProductID}"/>
+                    <Text text="{currentProductsModel>ProductName}"/>
+                   
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

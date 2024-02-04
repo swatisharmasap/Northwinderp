@@ -1,0 +1,33 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Region"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <Table items="{regionModel>/}" id="regionTable"> 
+        <columns>
+        <Column >
+         <Text text="Region ID "/>
+        </Column>
+       <Column >
+       <Text text="Region Description"/>
+       </Column>
+       
+       
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{regionModel>RegionID}"/>
+                    <Text text="{regionModel>RegionDescription}"/>
+                   
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

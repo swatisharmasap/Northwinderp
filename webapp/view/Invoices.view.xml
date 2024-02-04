@@ -1,0 +1,282 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Invoices"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:m="sap.m"
+    xmlns="sap.ui.table"
+>
+<m:Page
+        showHeader="false"
+        enableScrolling="false"
+        class="sapUiContentPadding"
+    >
+    <m:content>
+    <Table
+                rows="{invoicesModel>/}"
+                selectionMode="MultiToggle"
+                paste="onPaste"
+                ariaLabelledBy="title"
+                selectionBehavior="RowOnly"
+                rowSelectionChange="onRowPress"
+            >
+           
+            <columns>
+            <Column width="11rem">
+                        <m:Label text="ShipName"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShipName}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipAddress"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShipAddress}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipCity"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShipCity}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipRegion"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShipRegion}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column> 
+                    <Column width="11rem">
+                        <m:Label text="ShipPostalCode"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShipPostalCode}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column> 
+                    <Column width="11rem">
+                        <m:Label text="ShipCountry"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShipCountry}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column> 
+                    <Column width="11rem">
+                        <m:Label text="CustomerID"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>CustomerID}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column> 
+                    <Column width="11rem">
+                        <m:Label text="CustomerName"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>CustomerName}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                     <Column width="11rem">
+                        <m:Label text="Address"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Address}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="City"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>City}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                     <Column width="11rem">
+                        <m:Label text="Region"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Region}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="PostalCode"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>PostalCode}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Country"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Country}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column> 
+                    <Column width="11rem">
+                        <m:Label text="Salesperson"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Salesperson}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Salesperson"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Salesperson}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Salesperson"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Salesperson}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="OrderID"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>OrderID}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="OrderDate"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>OrderDate}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="RequiredDate"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>RequiredDate}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShippedDate"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShippedDate}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipperName"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ShipperName}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ProductID "/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ProductID}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ProductName"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ProductName}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="UnitPrice"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>UnitPrice}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Quantity"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Quantity}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Discount"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Discount}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ExtendedPrice"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>ExtendedPrice}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Freight"/>
+                        <template>
+                            <m:Text
+                                text="{invoicesModel>Freight}"
+                                wrapping="false"
+                            />
+                        </template>
+                    </Column>
+
+            </columns>
+ </Table>
+    </m:content>
+
+     </m:Page>
+</mvc:View>

@@ -1,0 +1,53 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Category"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="CategoryID" label="CategoryID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="CategoryID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="CategoryName" label="CategoryName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="CategoryName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+         <Table items="{categoryModel>/}" id="categoryTable"> 
+        <columns>
+        <Column >
+         <Text text="CategoryID "/>
+        </Column>
+       <Column >
+       <Text text="CategoryName"/>
+       </Column>
+       <Column >
+       <Text text="Description "/>
+       </Column>
+       <Column >
+       <Text text="Picture"/>
+       </Column>
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{categoryModel>CategoryID}"  />
+					<Text text="{categoryModel>CategoryName}" />
+					<Text text="{categoryModel>Description}" />
+					<Image src="{path:'categoryModel>Picture', formatter:'.formatImage'}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,181 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Panel
+                expandable="true"
+                width="auto"
+                headerText="{i18n>northwindtitle}"
+                expanded="true"
+            >
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Categories}"
+                    subheader="{i18n>CategoriesReport}"
+                    press="onPressCategories">
+                
+                    <TileContent>
+                        <NumericContent icon="sap-icon://group" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Summary_of_Sales_by_Quarters}"
+					subheader="{i18n>Summary_of_Sales_by_QuartersReport}"
+                    press="onPressSummaryofSalesbyQuarters">
+					<TileContent >
+					<NumericContent icon="sap-icon://customer-and-contacts"/>
+					</TileContent>
+                </GenericTile>
+
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Customers}"
+					subheader="{i18n>CustomersReport}"
+                    press="onPressCustomer">
+					<TileContent >
+					<NumericContent icon="sap-icon://person-placeholder"/>
+					</TileContent>
+
+                </GenericTile>
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Employees}"
+					subheader="{i18n>EmployeesReport}"
+                    press="onPressEmployees">
+					<TileContent >
+					<NumericContent icon="sap-icon://employee-lookup"/>
+					</TileContent>
+					</GenericTile>
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Order_Details}"
+					subheader="{i18n>Order_DetailsReport}"
+                    press="onPressOrderDetails">
+					<TileContent >
+					<NumericContent icon="sap-icon://order-status"/>
+					</TileContent>
+					</GenericTile>
+                
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Orders}"
+					subheader="{i18n>OrdersReport}"
+                    press="onPressOrders">
+					<TileContent >
+					<NumericContent icon="sap-icon://sales-order"/>
+					</TileContent>
+					</GenericTile>
+                
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Products}"
+					subheader="{i18n>ProductsReport}"
+                    press="onPressProducts">
+					<TileContent >
+					<NumericContent icon="sap-icon://product"/>
+					</TileContent>
+					</GenericTile>
+                
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Regions}"
+					subheader="{i18n>RegionsReport}"
+                    press="onPressRegions">
+					<TileContent >
+					<NumericContent icon="sap-icon://map"/>
+					</TileContent>
+					</GenericTile>
+					 
+                <GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Shippers}"
+					subheader="{i18n>ShippersReport}"
+                    press="onPressShippers">
+					<TileContent >
+					<NumericContent icon="sap-icon://shipping-status"/>
+					</TileContent>
+					</GenericTile>
+
+					<GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Suppliers}"
+					subheader="{i18n>SuppliersReport}"
+                    press="onPressSuppliers">
+					<TileContent >
+					<NumericContent icon="sap-icon://supplier"/>
+					</TileContent>
+					</GenericTile>
+
+					<GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Territories}"
+					subheader="{i18n>TerritoriesReport}"
+                    press="onPressTerritories">
+					<TileContent >
+					<NumericContent icon="sap-icon://map"/>
+					</TileContent>
+					</GenericTile>
+                
+				<GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Alphabetical_list_of_products}"
+					subheader="{i18n>Alphabetical_list_of_products}"
+                    press="onPressAlphabeticallistofproducts">
+					<TileContent >
+					<NumericContent icon="sap-icon://drop-down-list"/>
+					</TileContent>
+					</GenericTile>
+
+					<GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Category_Sales_for_1997}"
+					subheader="{i18n>Category_Sales_for_1997}"
+                    press="onPressCategorySalesfor1997">
+					<TileContent >
+					<NumericContent icon="sap-icon://group"/>
+					</TileContent>
+					</GenericTile>
+
+					<GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Current_Product_Lists}"
+					subheader="{i18n>Current_Product_Lists}"
+                    press="onPressCurrentProductLists">
+					<TileContent >
+					<NumericContent icon="sap-icon://group"/>
+					</TileContent>
+					</GenericTile>
+
+					<GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Customer_and_Suppliers_by_Cities}"
+					subheader="{i18n>Customer_and_Suppliers_by_Cities}"
+                    press="onPressCustomerandSuppliersbyCities">
+					<TileContent >
+					<NumericContent icon="sap-icon://shipping-status"/>
+					</TileContent>
+					</GenericTile>
+
+					<GenericTile
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="{i18n>Invoices}"
+					subheader="{i18n>Invoices}"
+                    press="onPressInvoices">
+					<TileContent >
+					<NumericContent icon="sap-icon://money-bills"/>
+					</TileContent>
+					</GenericTile>
+                
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

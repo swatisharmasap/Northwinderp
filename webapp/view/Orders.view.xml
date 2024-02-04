@@ -1,0 +1,79 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Orders"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <Table items="{ordersModel>/}" id="ordersTable"> 
+        <columns>
+        <Column >
+         <Text text="Order ID "/>
+        </Column>
+       <Column >
+       <Text text="Customer ID "/>
+       </Column>
+       <Column >
+       <Text text="Employee ID "/>
+       </Column>
+       <Column >
+       <Text text="Order Date "/>
+       </Column>
+       <Column >
+       <Text text="Required Date "/>
+       </Column>
+       <Column >
+       <Text text="Shipped Date "/>
+       </Column>
+       <Column >
+       <Text text="Ship Via "/>
+       </Column>
+       <Column >
+       <Text text="Freight "/>
+       </Column>
+       <Column >
+       <Text text="Ship Name "/>
+       </Column>
+       <Column >
+       <Text text="Ship Address "/>
+       </Column>
+       <Column >
+       <Text text="Ship City "/>
+       </Column>
+       <Column >
+       <Text text="Ship Region "/>
+       </Column>
+       <Column >
+       <Text text="Ship Postal Code  "/>
+       </Column>
+       <Column >
+       <Text text="Ship Country   "/>
+       </Column>
+       
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{ordersModel>OrderID}"/>
+					<Text text="{ordersModel>CustomerID}"/>
+					<Text text="{ordersModel>EmployeeID}"/>
+					<Text text="{path:'ordersModel>OrderDate', type:'sap.ui.model.type.Date', formatOptions:{style:'long'}}"/>
+                    <Text text="{path:'ordersModel>RequiredDate', type:'sap.ui.model.type.Date', formatOptions:{style:'long'}}"/>
+                    <Text text="{path:'ordersModel>ShippedDate', type:'sap.ui.model.type.Date', formatOptions:{style:'long'}}"/>
+                    <Text text="{ordersModel>ShipVia}"/>
+                     <Text text="{ordersModel>Freight}"/>
+                    <Text text="{ordersModel>ShipName}"/>
+                    <Text text="{ordersModel>ShipAddress}"/>
+                    <Text text="{ordersModel>ShipCity}"/>
+                    <Text text="{ordersModel>ShipRegion}"/>
+                    <Text text="{ordersModel>ShipPostalCode}"/>
+                    <Text text="{ordersModel>ShipCountry}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,80 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Suppliers"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                items="{suppliersModel>/}"
+                id="suppliersTable"
+            >
+                <columns>
+                    <Column>
+                        <Text text="Supplier ID  " />
+                    </Column>
+                    <Column>
+                        <Text text="Company Name " />
+                    </Column>
+                    <Column>
+                        <Text text="Contact Name  " />
+                    </Column>
+                    <Column>
+                        <Text text="Contact Title  " />
+                    </Column>
+                    <Column>
+                        <Text text="Address  " />
+                    </Column>
+                    <Column>
+                        <Text text="City  " />
+                    </Column>
+                    <Column>
+                        <Text text="Region  " />
+                    </Column>
+                    <Column>
+                        <Text text="Postal Code  " />
+                    </Column>
+                    <Column>
+                        <Text text="Country  " />
+                    </Column>
+                    <Column>
+                        <Text text="Phone  " />
+                    </Column>
+                    <Column>
+                        <Text text="Fax  " />
+                    </Column>
+                    <Column>
+                        <Text text="Home Page  " />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        vAlign="Middle"
+                        type="Navigation"
+                        press="onRowPress"
+                    >
+                        <cells>
+                            <Text text="{suppliersModel>SupplierID}" />
+                            <Text text="{suppliersModel>CompanyName}" />
+                            <Text text="{suppliersModel>ContactName}" />
+                            <Text text="{suppliersModel>ContactTitle}" />
+                            <Text text="{suppliersModel>Address}" />
+                            <Text text="{suppliersModel>City}" />
+                            <Text text="{suppliersModel>Region}" />
+                            <Text text="{suppliersModel>PostalCode}" />
+                            <Text text="{suppliersModel>Country}" />
+                            <Text text="{suppliersModel>Phone}" />
+                            <Text text="{suppliersModel>Fax}" />
+                            <Text text="{suppliersModel>HomePage}" />
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

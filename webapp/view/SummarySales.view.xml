@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.SummarySales"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='bar'>
+                 <viz:dataset>
+                    <viz.data:FlattenedDataset data="{summarySalesModel>/}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="OrderID"
+                                value="{OrderID}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Subtotal"
+                                value="{Subtotal}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Subtotal" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+                        values="OrderID" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame>
+        
+
+
+        </content>
+    </Page>
+</mvc:View>

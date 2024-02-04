@@ -1,0 +1,79 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Productlist"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                items="{productlistModel>/}"
+                id="productlistTable"
+            >
+                <columns>
+                    <Column>
+                        <Text text="Product ID " />
+                    </Column>
+                    <Column>
+                        <Text text="Product Name " />
+                    </Column>
+                      <Column>
+                        <Text text="Supplier ID " />
+                    </Column>
+                    <Column>
+                        <Text text="Category ID  " />
+                    </Column>
+                    <Column>
+                        <Text text="Quantity Per Unit  " />
+                    </Column>
+                    <Column>
+                        <Text text="Unit Price  " />
+                    </Column>
+                    <Column>
+                        <Text text="Units In Stock  " />
+                    </Column>
+                    <Column>
+                        <Text text="Units On Order  " />
+                    </Column>
+                    <Column>
+                        <Text text="Reorder Level  " />
+                    </Column>
+                    <Column>
+                        <Text text="Discontinued  " />
+                    </Column>
+                    <Column>
+                        <Text text="Category Name   " />
+                    </Column>
+                    
+
+                    
+                </columns>
+                <items>
+                    <ColumnListItem
+                        vAlign="Middle"
+                        type="Navigation"
+                        press="onRowPress"
+                    >
+                        <cells>
+                            <Text text="{productlistModel>ProductID}" />
+                            <Text text="{productlistModel>ProductName}" />
+                            <Text text="{productlistModel>SupplierID}" />
+                            <Text text="{productlistModel>CategoryID}" />
+                            <Text text="{productlistModel>QuantityPerUnit}" />
+                            <Text text="{productlistModel>UnitPrice}" />
+                            <Text text="{productlistModel>UnitsInStock}" />
+                            <Text text="{productlistModel>UnitsOnOrder}" />
+                            <Text text="{productlistModel>ReorderLevel}" />
+                            <Text text="{productlistModel>Discontinued}" />
+                            <Text text="{productlistModel>CategoryName}" />
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

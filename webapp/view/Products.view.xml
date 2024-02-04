@@ -1,0 +1,65 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Products"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <Table items="{productsModel>/}" id="productsTable"> 
+        <columns>
+        <Column >
+         <Text text="Product ID "/>
+        </Column>
+       <Column >
+       <Text text="Product Name  "/>
+       </Column>
+       <Column >
+       <Text text="Supplier ID "/>
+       </Column>
+       <Column >
+       <Text text="Category ID "/>
+       </Column>
+       <Column >
+       <Text text="Quantity Per Unit "/>
+       </Column>
+       <Column >
+       <Text text="Unit Price "/>
+       </Column>
+       <Column >
+       <Text text="Units In Stock "/>
+       </Column>
+       <Column >
+       <Text text="Units On Order "/>
+       </Column>
+       <Column >
+       <Text text="Reorder Level  "/>
+       </Column>
+       <Column >
+       <Text text="Discontinued  "/>
+       </Column>
+       
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{productsModel>ProductID}"/>
+                    <Text text="{productsModel>ProductName}"/>
+                    <Text text="{productsModel>SupplierID}"/>
+                    <Text text="{productsModel>ProductID}"/>
+                    <Text text="{productsModel>CategoryID}"/>
+                    <Text text="{productsModel>QuantityPerUnit}"/>
+                    <Text text="{productsModel>UnitPrice}"/>
+                    <Text text="{productsModel>UnitsInStock}"/>
+                    <Text text="{productsModel>UnitsOnOrder}"/>
+                    <Text text="{productsModel>ReorderLevel}"/>
+                    <Text text="{productsModel>Discontinued}"/>
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

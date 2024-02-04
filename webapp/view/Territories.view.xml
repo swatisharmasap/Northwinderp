@@ -1,0 +1,45 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Territories"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                items="{territoriesModel>/}"
+                id="territoriesTable"
+            >
+                <columns>
+                    <Column>
+                        <Text text="Territory ID   " />
+                    </Column>
+                    <Column>
+                        <Text text="Territory Description " />
+                    </Column>
+                      <Column>
+                        <Text text="Region ID  " />
+                    </Column>
+                    
+                </columns>
+                <items>
+                    <ColumnListItem
+                        vAlign="Middle"
+                        type="Navigation"
+                        press="onRowPress"
+                    >
+                        <cells>
+                            <Text text="{territoriesModel>TerritoryID}" />
+                            <Text text="{territoriesModel>TerritoryDescription}" />
+                            <Text text="{territoriesModel>RegionID}" />
+                              
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

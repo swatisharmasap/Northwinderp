@@ -1,0 +1,82 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Customer"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="CustomerID" label="CustomerID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="CustomerID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="CompanyName" label="CompanyName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="CompanyName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+         <Table items="{customerModel>/}" id="customerTable"> 
+        <columns>
+        <Column >
+         <Text text="Customer ID"/>
+        </Column>
+       <Column >
+       <Text text="Company Name"/>
+       </Column>
+       <Column >
+       <Text text="Contact Name"/>
+       </Column>
+       <Column >
+       <Text text="Contact Title"/>
+       </Column>
+       <Column >
+       <Text text="Address"/>
+       </Column>
+       <Column >
+       <Text text="City"/>
+       </Column>
+       <Column >
+       <Text text="Region"/>
+       </Column>
+       <Column >
+       <Text text="Postal Code"/>
+       </Column>
+       <Column >
+       <Text text="Country"/>
+       </Column>
+       <Column >
+       <Text text="Phone"/>
+       </Column>
+       <Column >
+       <Text text="Fax"/>
+       </Column>
+       
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{customerModel>CustomerID}"/>
+					<Text text="{customerModel>CompanyName}"/>
+                    <Text text="{customerModel>ContactName}"/>
+					<Text text="{customerModel>ContactTitle}"/>
+					<Text text="{customerModel>Address}"/>
+                    <Text text="{customerModel>City}"/>
+                    <Text text="{customerModel>Region}"/>
+                    <Text text="{customerModel>PostalCode}"/>
+                    <Text text="{customerModel>Country}"/>
+                    <Text text="{customerModel>Phone}"/>
+                    <Text text="{customerModel>Fax}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>

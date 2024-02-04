@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="sap.com.northwinderp.controller.Shippers"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <content>
+         <Table items="{shippersModel>/}" id="shippersTable"> 
+        <columns>
+        <Column >
+         <Text text="Shipper ID "/>
+        </Column>
+       <Column >
+       <Text text="Company Name "/>
+       </Column>
+        <Column >
+       <Text text="Phone"/>
+       </Column>
+       
+       
+        </columns>
+        <items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{shippersModel>ShipperID}"/>
+                    <Text text="{shippersModel>CompanyName}"/>
+                    <Text text="{shippersModel>Phone}"/>
+                    
+                   
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table> 
+        </content>
+    </Page>
+</mvc:View>
