@@ -25,6 +25,32 @@ sap.ui.define([
                 })
 
             },
+            onSearch:function(){
+
+                var CustomerID = this.getView().byId("CustomerID").getValue();
+                var CompanyName = this.getView().byId("CompanyName").getValue();
+                var allFilters = [];
+                var oTableBinding = this.getView().byId("customerTable").getBinding("items");
+                if(CustomerID){
+                    var oMyFilterCusID = new sap.ui.model.Filter("CustomerID",sap.ui.model.FilterOperator.EQ,CustomerID)
+                    allFilters.push(oMyFilterCusID);
+                }
+
+                if(CompanyName){
+                    var oMyFilterComName=new sap.ui.model.Filter("CompanyName",sap.ui.model.FilterOperator.Contains,CompanyName);
+                    allFilters.push(oMyFilterComName);
+                }
+             
+              
+                var oFilter = new sap.ui.model.Filter({
+                    filters: allFilters,
+                    and: true
+                  });
+
+                  oTableBinding.filter(oFilter);
+
+                     
+      }
             
         });
     });

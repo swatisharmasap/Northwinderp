@@ -20,7 +20,33 @@ sap.ui.define([
                     }.bind(this),
                     error:function(oError){ this.getView().setBusy(false)}
                 })
-            }
+            },
+            onSearch:function(){
+
+                var OrderID = this.getView().byId("OrderID").getValue();
+                var ProductID = this.getView().byId("ProductID").getValue();
+                var allFilters = [];
+                var oTableBinding = this.getView().byId("orderDetailsTable").getBinding("items");
+                if(OrderID){
+                    var oMyFilterOrderID = new sap.ui.model.Filter("OrderID",sap.ui.model.FilterOperator.EQ,OrderID)
+                    allFilters.push(oMyFilterOrderID);
+                }
+                
+                if(ProductID){
+                    var oMyFilterProductID=new sap.ui.model.Filter("ProductID",sap.ui.model.FilterOperator.EQ,ProductID);
+                    allFilters.push(oMyFilterProductID);
+                }
+             
+              
+                var oFilter = new sap.ui.model.Filter({
+                    filters: allFilters,
+                    and: true
+                  });
+
+                  oTableBinding.filter(oFilter);
+
+                     
+      }
            
            
         

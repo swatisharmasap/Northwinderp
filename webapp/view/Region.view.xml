@@ -2,15 +2,31 @@
     controllerName="sap.com.northwinderp.controller.Region"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar">
     <Page
         id="page"
         title="{i18n>title}">
         <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="RegionID" label="RegionID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+					
+                    				<Input id="RegionID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="RegionDescription" label="RegionDescription" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="RegionDescription"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
          <Table items="{regionModel>/}" id="regionTable"> 
         <columns>
         <Column >
-         <Text text="Region ID "/>
+         <Text text="Region ID"/>
         </Column>
        <Column >
        <Text text="Region Description"/>

@@ -32,7 +32,33 @@ sap.ui.define([
                    // return "data:image/png;base64,"+sValue;
                 }
 
-            }
+            },
+            onSearch:function(){
+
+                var EmployeeID = this.getView().byId("EmployeeID").getValue();
+                var FirstName = this.getView().byId("FirstName").getValue();
+                var allFilters = [];
+                var oTableBinding = this.getView().byId("employeesTable").getBinding("items");
+                if(EmployeeID){
+                    var oMyFilterEmpID = new sap.ui.model.Filter("EmployeeID",sap.ui.model.FilterOperator.EQ,EmployeeID)
+                    allFilters.push(oMyFilterEmpID);
+                }
+                
+                if(FirstName){
+                    var oMyFilterFirstName=new sap.ui.model.Filter("FirstName",sap.ui.model.FilterOperator.Contains,FirstName);
+                    allFilters.push(oMyFilterFirstName);
+                }
+             
+              
+                var oFilter = new sap.ui.model.Filter({
+                    filters: allFilters,
+                    and: true
+                  });
+
+                  oTableBinding.filter(oFilter);
+
+                     
+      }
            
            
         

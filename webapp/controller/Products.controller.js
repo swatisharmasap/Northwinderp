@@ -23,8 +23,32 @@ sap.ui.define([
                     }
                 })
             },
-            
-           
+            onSearch:function(){
+
+                var ProductID = this.getView().byId("ProductID").getValue();
+                var ProductName = this.getView().byId("ProductName").getValue();
+                var allFilters = [];
+                var oTableBinding = this.getView().byId("productsTable").getBinding("items");
+                if(ProductID){
+                    var oMyFilterProductID = new sap.ui.model.Filter("ProductID",sap.ui.model.FilterOperator.EQ,ProductID)
+                    allFilters.push(oMyFilterProductID);
+                }
+                
+                if(ProductName){
+                    var oMyFilterProductName=new sap.ui.model.Filter("ProductName",sap.ui.model.FilterOperator.Contains,ProductName);
+                    allFilters.push(oMyFilterProductName);
+                }
+             
+              
+                var oFilter = new sap.ui.model.Filter({
+                    filters: allFilters,
+                    and: true
+                  });
+
+                  oTableBinding.filter(oFilter);
+
+                     
+      }
            
         
         });

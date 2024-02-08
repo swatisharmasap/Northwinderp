@@ -2,18 +2,34 @@
     controllerName="sap.com.northwinderp.controller.Products"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar">
     <Page
         id="page"
         title="{i18n>title}">
         <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="ProductID" label="ProductID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+					
+                    				<Input id="ProductID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="ProductName" label="ProductName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="ProductName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
          <Table items="{productsModel>/}" id="productsTable"> 
         <columns>
         <Column >
-         <Text text="Product ID "/>
+         <Text text="Product ID"/>
         </Column>
        <Column >
-       <Text text="Product Name  "/>
+       <Text text="Product Name"/>
        </Column>
        <Column >
        <Text text="Supplier ID "/>

@@ -12,7 +12,8 @@
 							<fb:filterGroupItems>
 								<fb:FilterGroupItem name="CategoryID" label="CategoryID" groupName="Group1" visibleInFilterBar="true">
 									<fb:control>
-									<Input id="CategoryID"/>	
+					
+                    				<Input id="CategoryID"/>	
 									</fb:control>
 								</fb:FilterGroupItem>
 								<fb:FilterGroupItem name="CategoryName" label="CategoryName" groupName="Group1" visibleInFilterBar="true">
@@ -51,3 +52,4 @@
         </content>
     </Page>
 </mvc:View>
+

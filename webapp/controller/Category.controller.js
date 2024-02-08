@@ -34,14 +34,28 @@ sap.ui.define([
             },
             onSearch:function(){
 
-                var ProductID = this.getView().byId("CategoryID").getValue();
+                var CategoryID = this.getView().byId("CategoryID").getValue();
+                var CategoryName = this.getView().byId("CategoryName").getValue();
+                var allFilters = [];
                 var oTableBinding = this.getView().byId("categoryTable").getBinding("items");
-                var oMyFilter = new sap.ui.model.Filter("CategoryID",sap.ui.model.FilterOperator.EQ,ProductID)
-                if(ProductID){
-                    oTableBinding.filter(oMyFilter);
-                }else{
-                    oTableBinding.filter([]);
+                if(CategoryID){
+                    var oMyFilterCatID = new sap.ui.model.Filter("CategoryID",sap.ui.model.FilterOperator.EQ,CategoryID)
+                    allFilters.push(oMyFilterCatID);
                 }
+
+                if(CategoryName){
+                    var oMyFilterCatName=new sap.ui.model.Filter("CategoryName",sap.ui.model.FilterOperator.Contains,CategoryName);
+                    allFilters.push(oMyFilterCatName);
+                }
+             
+              
+                var oFilter = new sap.ui.model.Filter({
+                    filters: allFilters,
+                    and: true
+                  });
+
+                  oTableBinding.filter(oFilter);
+
                      
       }
            
