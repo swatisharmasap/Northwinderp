@@ -40,3 +40,13 @@ A Fiori application.
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+# Application Description and functionalities
+
+This application is using northwind odata v2 service which is open and can be use without any authentication for learning purpose.
+
+this northwind service contains various tables about northwind fiction company for example Employees, orders, product lists, invoices etc.
+I have used these tables in custom UI5 app and displayed the data of these tables with uses of sap ui5 grid and responsive tables also the search functionaltity has been used.
+i have used JSON model  insead of direct binding of odata model because i wanted to explore JSON model and its feature more.
+
+
+
