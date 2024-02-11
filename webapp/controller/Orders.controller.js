@@ -16,6 +16,7 @@ sap.ui.define([
                     success:function(oResponse){
                         this.getView().setBusy(false)
                         oJsonModel.setData(oResponse.results);
+                        this.getView().byId("idOrdersTitle").setText(`Orders(${oResponse.results.length})`)
                         this.getView().setModel(oJsonModel,"ordersModel")
                     }.bind(this),
                     error:function(oError){

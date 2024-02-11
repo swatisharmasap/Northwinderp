@@ -319,8 +319,8 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "CategorySales",
-          "viewName": "CategorySales"
+          "viewId": "CurrentProduct",
+          "viewName": "CurrentProduct"
         },
        
         "TargetCity": {

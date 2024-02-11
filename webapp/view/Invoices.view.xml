@@ -4,6 +4,7 @@
     displayBlock="true"
     xmlns:m="sap.m"
     xmlns="sap.ui.table"
+    xmlns:fb="sap.ui.comp.filterbar"
 >
 <m:Page
         showHeader="false"
@@ -11,6 +12,22 @@
         class="sapUiContentPadding"
     >
     <m:content>
+    <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="ShipName" label="ShipName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+					
+                    				<m:Input id="ShipName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="ShipAddress" label="ShipAddress" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<m:Input id="ShipAddress"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+
     <Table
                 rows="{invoicesModel>/}"
                 selectionMode="MultiToggle"
@@ -18,8 +35,15 @@
                 ariaLabelledBy="title"
                 selectionBehavior="RowOnly"
                 rowSelectionChange="onRowPress"
+                id="invoicestable"
             >
-           
+           <m:headerToolbar>
+       <m:OverflowToolbar >
+       <m:content>
+       <m:Title text="Invoices" id="idInvoicestitle"/>
+             </m:content>
+       </m:OverflowToolbar>
+       </m:headerToolbar>
             <columns>
             <Column width="11rem">
                         <m:Label text="ShipName"/>

@@ -2,12 +2,35 @@
     controllerName="sap.com.northwinderp.controller.City"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar">
     <Page
         id="page"
         title="{i18n>title}">
         <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="City" label="City" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+					
+                    				<Input id="City"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="CompanyName" label="CompanyName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="CompanyName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
          <Table items="{cityModel>/}" id="cityTable"> 
+         <headerToolbar>
+       <OverflowToolbar >
+       <content>
+       <Title text="" id="idCustomersandsupplierslistTitle"/>
+             </content>
+       </OverflowToolbar>
+       </headerToolbar>
         <columns>
         <Column >
          <Text text="City"/>

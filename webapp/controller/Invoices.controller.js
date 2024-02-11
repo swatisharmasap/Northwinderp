@@ -23,6 +23,32 @@ sap.ui.define([
                     }
                 })
             },
+            onSearch:function(){
+
+                var ShipName = this.getView().byId("ShipName").getValue();
+                var ShipAddress = this.getView().byId("ShipAddress").getValue();
+                var allFilters = [];
+                var oTableBinding = this.getView().byId("invoicestable").getBinding("rows");
+                if(ShipName){
+                    var oMyFilterShipName = new sap.ui.model.Filter("ShipName",sap.ui.model.FilterOperator.Contains,ShipName)
+                    allFilters.push(oMyFilterShipName);
+                }
+
+                if(ShipAddress){
+                    var oMyFilterShipAddress=new sap.ui.model.Filter("ShipAddress",sap.ui.model.FilterOperator.Contains,ShipAddress);
+                    allFilters.push(oMyFilterShipAddress);
+                }
+             
+              
+                var oFilter = new sap.ui.model.Filter({
+                    filters: allFilters,
+                    and: true
+                  });
+
+                  oTableBinding.filter(oFilter);
+
+                     
+      }
             
            
            

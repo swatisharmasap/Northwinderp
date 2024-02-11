@@ -24,6 +24,13 @@
 							</fb:filterGroupItems>
 						</fb:FilterBar>
          <Table items="{productsModel>/}" id="productsTable"> 
+            <headerToolbar>
+       <OverflowToolbar >
+       <content>
+       <Title text="" id="idProductsTitle"/>
+             </content>
+       </OverflowToolbar>
+       </headerToolbar>
         <columns>
         <Column >
          <Text text="Product ID"/>

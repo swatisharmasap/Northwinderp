@@ -2,15 +2,41 @@
     controllerName="sap.com.northwinderp.controller.Shippers"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar">
     <Page
         id="page"
         title="{i18n>title}">
         <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="ShipperID" label="ShipperID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+					
+                    				<Input id="ShipperID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="CompanyName" label="CompanyName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="CompanyName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
          <Table items="{shippersModel>/}" id="shippersTable"> 
+            <headerToolbar>
+       <OverflowToolbar >
+       <content>
+       <Title text="" id="idShippersTitle"/>
+       <ToolbarSpacer/>
+       <Button text ="Add"/>
+       <Button text ="Delete"/>
+             </content>
+       </OverflowToolbar>
+       </headerToolbar>
         <columns>
         <Column >
-         <Text text="Shipper ID "/>
+         <Text text="Shipper ID"/>
         </Column>
        <Column >
        <Text text="Company Name "/>

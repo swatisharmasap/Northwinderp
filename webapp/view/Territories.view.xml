@@ -3,22 +3,45 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
 >
     <Page
         id="page"
         title="{i18n>title}"
     >
         <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="TerritoryID" label="TerritoryID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+					
+                    				<Input id="TerritoryID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="TerritoryDescription" label="TerritoryDescription" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="TerritoryDescription"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
             <Table
                 items="{territoriesModel>/}"
                 id="territoriesTable"
             >
+               <headerToolbar>
+       <OverflowToolbar >
+       <content>
+       <Title text="" id="idTerritoriesTitle"/>
+             </content>
+       </OverflowToolbar>
+       </headerToolbar>
                 <columns>
                     <Column>
-                        <Text text="Territory ID   " />
+                        <Text text="Territory ID" />
                     </Column>
                     <Column>
-                        <Text text="Territory Description " />
+                        <Text text="Territory Description" />
                     </Column>
                       <Column>
                         <Text text="Region ID  " />

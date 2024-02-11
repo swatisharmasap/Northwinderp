@@ -16,6 +16,7 @@ sap.ui.define([
                     success:function(oResponse){
                         this.getView().setBusy(false)
                         oJsonModel.setData(oResponse.results);
+                        this.getView().byId("idRegionTitle").setText(`Region(${oResponse.results.length})`)
                         this.getView().setModel(oJsonModel,"regionModel")
                     }.bind(this),
                     error:function(oError){
@@ -30,7 +31,7 @@ sap.ui.define([
                 var allFilters = [];
                 var oTableBinding = this.getView().byId("regionTable").getBinding("items");
                 if(RegionID){
-                    varnpm oMyFilterRegionID = new sap.ui.model.Filter("RegionID",sap.ui.model.FilterOperator.EQ,RegionID)
+                    var oMyFilterRegionID = new sap.ui.model.Filter("RegionID",sap.ui.model.FilterOperator.EQ,RegionID)
                     allFilters.push(oMyFilterRegionID);
                 }
                 

@@ -16,6 +16,7 @@ sap.ui.define([
                     success:function(oResponse){
                         this.getView().setBusy(false)
                         oJsonModel.setData(oResponse.results);
+                        this.getView().byId("idCustomersandsupplierslistTitle").setText(`Customers and suppliers list(${oResponse.results.length})`)
                         this.getView().setModel(oJsonModel,"cityModel")
                     }.bind(this),
                     error:function(oError){
@@ -23,6 +24,32 @@ sap.ui.define([
                     }
                 })
             },
+            onSearch:function(){
+
+                var City = this.getView().byId("City").getValue();
+                var CompanyName = this.getView().byId("CompanyName").getValue();
+                var allFilters = [];
+                var oTableBinding = this.getView().byId("cityTable").getBinding("items");
+                if(City){
+                    var oMyFilterCity = new sap.ui.model.Filter("City",sap.ui.model.FilterOperator.EQ,City)
+                    allFilters.push(oMyFilterCity);
+                }
+
+                if(CompanyName){
+                    var oMyFilterCompanyName=new sap.ui.model.Filter("CompanyName",sap.ui.model.FilterOperator.Contains,CompanyName);
+                    allFilters.push(oMyFilterCompanyName);
+                }
+             
+              
+                var oFilter = new sap.ui.model.Filter({
+                    filters: allFilters,
+                    and: true
+                  });
+
+                  oTableBinding.filter(oFilter);
+
+                     
+      }
             
            
            

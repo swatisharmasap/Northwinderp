@@ -24,6 +24,18 @@
 							</fb:filterGroupItems>
 						</fb:FilterBar>
          <Table items="{regionModel>/}" id="regionTable"> 
+
+	<headerToolbar>
+    	<OverflowToolbar>
+    	<content>
+        <Title text=""  id="idRegionTitle" />
+	<ToolbarSpacer />
+    <Button  text="Add"/>
+     <Button  text="Delete"/>
+        	</content>
+	</OverflowToolbar>
+    	</headerToolbar>
+
         <columns>
         <Column >
          <Text text="Region ID"/>

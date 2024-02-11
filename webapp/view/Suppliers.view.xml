@@ -3,19 +3,45 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
 >
     <Page
         id="page"
         title="{i18n>title}"
     >
         <content>
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="SupplierID" label="SupplierID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+					
+                    				<Input id="SupplierID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="CompanyName" label="CompanyName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="CompanyName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
             <Table
                 items="{suppliersModel>/}"
                 id="suppliersTable"
             >
+            <headerToolbar>
+       <OverflowToolbar >
+       <content>
+       <Title text="" id="idSuppliersTitle"/>
+       <ToolbarSpacer/>
+       <Button text ="Add"/>
+       <Button text ="Delete"/>
+             </content>
+       </OverflowToolbar>
+       </headerToolbar>
                 <columns>
                     <Column>
-                        <Text text="Supplier ID  " />
+                        <Text text="Supplier ID" />
                     </Column>
                     <Column>
                         <Text text="Company Name " />
