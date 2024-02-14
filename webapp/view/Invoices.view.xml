@@ -37,13 +37,6 @@
                 rowSelectionChange="onRowPress"
                 id="invoicestable"
             >
-           <m:headerToolbar>
-       <m:OverflowToolbar >
-       <m:content>
-       <m:Title text="Invoices" id="idInvoicestitle"/>
-             </m:content>
-       </m:OverflowToolbar>
-       </m:headerToolbar>
             <columns>
             <Column width="11rem">
                         <m:Label text="ShipName"/>
