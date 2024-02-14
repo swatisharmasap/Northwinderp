@@ -1,10 +1,11 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/Fragment"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller,Fragment) {
         "use strict";
 
         return Controller.extend("sap.com.northwinderp.controller.Customer", {
@@ -51,7 +52,57 @@ sap.ui.define([
                   oTableBinding.filter(oFilter);
 
                      
-      }
+      },
+      onAdd: function () {
+        var oView = this.getView();
+
+        // create dialog lazily
+        if (!this.byId("openDialog")) {
+
+            // load asynchronous XML fragment
+            Fragment.load({
+                id: oView.getId(),
+                name: "sap.com.northwinderp.fragments.Customer",
+                controller: this
+            }).then(function (oDialog) {
+                // connect dialog to the root view 
+                //of this component (models, lifecycle)
+                oView.addDependent(oDialog);
+               
+                oDialog.open();
+            });
+
+        }
+
+
+
+    }
+    ,
+    closeDialog: function () {
+        this.byId("openDialog").destroy();
+    },
+    saveDialog:function(){
+        debugger;
+        var CustomerID = this.getView().byId("field0").getValue();
+        var CompanyName = this.getView().byId("field1").getValue(); 
+        var ContactName = this.getView().byId("field2").getValue();
+        var ocustomeJSONModel = this.getView().getModel("customerModel");
+        var modelData = ocustomeJSONModel.getData();
+        var orecordArray = modelData;
+        orecordArray.push({
+            CustomerID: CustomerID,
+            CompanyName: CompanyName,
+            ContactName:ContactName,
+
+          });
+          
+
+          ocustomeJSONModel.setData(orecordArray);
+          this.closeDialog();
+    },
+
+
+      
             
         });
     });

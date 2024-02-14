@@ -28,6 +28,7 @@
        <OverflowToolbar >
        <content>
        <Title text="" id="idOrderDetailsTitle"/>
+       
              </content>
        </OverflowToolbar>
        </headerToolbar>
@@ -47,6 +48,9 @@
         <Column >
        <Text text="Discount"/>
        </Column> 
+       <Column >
+       <Text text="total Price"/>
+       </Column>
           </columns>
         <items>
 			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
@@ -56,6 +60,7 @@
                     <Text text="{orderDetailsModel>UnitPrice}"/>
                     <Text text="{orderDetailsModel>Quantity}"/>
                     <Text text="{orderDetailsModel>Discount}"/>
+                    <Text text="{orderDetailsModel>totalPrice}"/>
                    
 					
 				</cells>
@@ -63,5 +68,12 @@
 		</items>
         </Table> 
         </content>
+        <footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+                <Text text="Grand Total"/>
+				<Text id="Grandtotalid"/>
+			</OverflowToolbar>
+		</footer>
     </Page>
 </mvc:View>

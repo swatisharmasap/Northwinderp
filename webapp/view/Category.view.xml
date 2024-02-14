@@ -8,6 +8,7 @@
         id="page"
         title="{i18n>title}">
         <content>
+        
         <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
 							<fb:filterGroupItems>
 								<fb:FilterGroupItem name="CategoryID" label="CategoryID" groupName="Group1" visibleInFilterBar="true">
@@ -29,8 +30,8 @@
        <content>
        <Title text="" id="idCategoryTitle"/>
        <ToolbarSpacer/>
-       <Button text ="Add"/>
-       <Button text ="Delete"/>
+       <Button text ="Add"  press="onAdd"/>
+       <Button text ="Delete"  press="onDelete"/>
              </content>
        </OverflowToolbar>
        </headerToolbar>

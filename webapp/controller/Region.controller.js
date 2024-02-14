@@ -1,10 +1,11 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/Fragment"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller,Fragment) {
         "use strict";
 
         return Controller.extend("sap.com.northwinderp.controller.Region", {
@@ -49,8 +50,59 @@ sap.ui.define([
                   oTableBinding.filter(oFilter);
 
                      
-      }
-           
+      },
+      onAdd: function () {
+        var oView = this.getView();
+
+        // create dialog lazily
+        if (!this.byId("openDialog")) {
+
+            // load asynchronous XML fragment
+            Fragment.load({
+                id: oView.getId(),
+                name: "sap.com.northwinderp.fragments.Region",
+                controller: this
+            }).then(function (oDialog) {
+                // connect dialog to the root view 
+                //of this component (models, lifecycle)
+                oView.addDependent(oDialog);
+               
+                oDialog.open();
+            });
+
+        }
+
+
+
+    },
+    closeDialog: function () {
+        this.byId("openDialog").destroy();
+    },
+    saveDialog:function(){
+        debugger;
+        var RegionID = this.getView().byId("field0").getValue();
+        var RegionDescription = this.getView().byId("field1").getValue(); 
+        var oregionJSONModel = this.getView().getModel("regionModel");
+        var modelData = oregionJSONModel.getData();
+        var orecordArray = modelData;
+        orecordArray.push({
+            RegionID: RegionID,
+            RegionDescription: RegionDescription,
+          });
+          
+
+          oregionJSONModel.setData(orecordArray);
+          this.closeDialog();
+    },
+    onDelete:function(){
+        var oregionJSONModel = this.getView().getModel("regionModel");
+        var modelData = oregionJSONModel.getData();    
+        var orecordArray = modelData;
+        orecordArray.pop();
+        oregionJSONModel.setData(modelData)
+
+
+    }
            
         
         });

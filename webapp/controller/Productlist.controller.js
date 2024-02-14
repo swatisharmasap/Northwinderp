@@ -15,6 +15,11 @@ sap.ui.define([
                 oDataModel.read("/Alphabetical_list_of_products",{
                     success:function(oResponse){
                         this.getView().setBusy(false)
+                        var TotalUnit=0;
+                        for(let i=0; i<oResponse.results.length; i++){
+                    TotalUnit=TotalUnit+oResponse.results[i].UnitsInStock
+                        }
+                        this.getView().byId("TotalUnitid").setText(TotalUnit)
                         oJsonModel.setData(oResponse.results);
                         this.getView().byId("idProductListTitle").setText(`ProductList(${oResponse.results.length})`)
                         this.getView().setModel(oJsonModel,"productlistModel")

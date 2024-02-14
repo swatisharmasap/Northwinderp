@@ -30,8 +30,8 @@
     	<content>
         <Title text=""  id="idRegionTitle" />
 	<ToolbarSpacer />
-    <Button  text="Add"/>
-     <Button  text="Delete"/>
+    <Button  text="Add" press="onAdd"/>
+     <Button  text="Delete" press="onDelete"/>
         	</content>
 	</OverflowToolbar>
     	</headerToolbar>

@@ -15,6 +15,15 @@ sap.ui.define([
                 oDataModel.read("/Employees",{
                     success:function(oResponse){
                         this.getView().setBusy(false)
+                        for(let i=0; i<oResponse.results.length; i++){
+
+                            if(oResponse.results[i].EmployeeID==1){
+                                oResponse.results[i].City = "New Delhi"
+                                oResponse.results[i].Country= "India"
+                                
+                            }
+                            
+                        }
                         oJsonModel.setData(oResponse.results);
                         this.getView().byId("idEmployeesTitle").setText(`Employees(${oResponse.results.length})`)  
                         this.getView().setModel(oJsonModel,"employeesModel")

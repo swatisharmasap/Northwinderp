@@ -27,6 +27,9 @@
        <OverflowToolbar >
        <content>
        <Title text="" id="idCustomersTitle"/>
+       <ToolbarSpacer/>
+       <Button text ="Add"  press="onAdd"/>
+       <Button text ="Delete"  press="onDelete"/>
              </content>
        </OverflowToolbar>
        </headerToolbar>

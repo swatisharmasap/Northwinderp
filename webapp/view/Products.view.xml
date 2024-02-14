@@ -84,5 +84,12 @@
 		</items>
         </Table> 
         </content>
+        <footer>
+        <OverflowToolbar >
+        <ToolbarSpacer />
+        <Text text="Total Unit"/>
+        <Text id="TotalUnitid"/>
+        </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>

@@ -15,6 +15,15 @@ sap.ui.define([
                 oDataModel.read("/Order_Details",{
                     success:function(oResponse){
                         this.getView().setBusy(false)
+                        var Grandtotal=0;
+                    for(let i=0; i<oResponse.results.length; i++){
+
+                        oResponse.results[i].totalPrice = oResponse.results[i].UnitPrice*oResponse.results[i].Quantity-oResponse.results[i].Discount
+
+                        Grandtotal=Grandtotal+oResponse.results[i].totalPrice
+                    }
+                    this.getView().byId("Grandtotalid").setText(Grandtotal)
+
                         oJsonModel.setData(oResponse.results);
                         this.getView().byId("idOrderDetailsTitle").setText(`OrderDetails(${oResponse.results.length})`)
                         this.getView().setModel(oJsonModel,"orderDetailsModel")

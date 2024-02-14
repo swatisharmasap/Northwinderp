@@ -15,6 +15,14 @@ sap.ui.define([
                 oDataModel.read("/Orders",{
                     success:function(oResponse){
                         this.getView().setBusy(false)
+                        for(let i=0; i<oResponse.results.length; i++){
+
+                            if(oResponse.results[i].OrderID==10248) {
+                                oResponse.results[i].ShipCity="Delhi"
+                                oResponse.results[i].ShipPostalCode="10053"
+                                oResponse.results[i].ShipCountry="India"
+                            }
+                        }
                         oJsonModel.setData(oResponse.results);
                         this.getView().byId("idOrdersTitle").setText(`Orders(${oResponse.results.length})`)
                         this.getView().setModel(oJsonModel,"ordersModel")
