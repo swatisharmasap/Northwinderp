@@ -249,7 +249,7 @@
                         <m:Label text="UnitPrice"/>
                         <template>
                             <m:Text
-                                text="{invoicesModel>UnitPrice}"
+                                text="{path:'invoicesModel>UnitPrice',formatter:'.numberFormatting'}"
                                 wrapping="false"
                             />
                         </template>
@@ -276,7 +276,7 @@
                         <m:Label text="ExtendedPrice"/>
                         <template>
                             <m:Text
-                                text="{invoicesModel>ExtendedPrice}"
+                                text="{path:'invoicesModel>ExtendedPrice',formatter:'.numberFormatting'}"
                                 wrapping="false"
                             />
                         </template>
@@ -285,7 +285,7 @@
                         <m:Label text="Freight"/>
                         <template>
                             <m:Text
-                                text="{invoicesModel>Freight}"
+                                text="{path:'invoicesModel>Freight',formatter:'.numberFormatting'}"
                                 wrapping="false"
                             />
                         </template>

@@ -23,7 +23,7 @@
                     press="onPressCategories">
                 
                     <TileContent>
-                        <NumericContent icon="sap-icon://group" />
+                        <NumericContent icon="sap-icon://group" id="categoriesID1" value=""/>
                     </TileContent>
                 </GenericTile>
                 <GenericTile
@@ -32,7 +32,7 @@
 					subheader="{i18n>Summary_of_Sales_by_QuartersReport}"
                     press="onPressSummaryofSalesbyQuarters">
 					<TileContent >
-					<NumericContent icon="sap-icon://customer-and-contacts"/>
+					<NumericContent icon="sap-icon://customer-and-contacts" />
 					</TileContent>
                 </GenericTile>
 
@@ -42,7 +42,7 @@
 					subheader="{i18n>CustomersReport}"
                     press="onPressCustomer">
 					<TileContent >
-					<NumericContent icon="sap-icon://person-placeholder"/>
+					<NumericContent icon="sap-icon://person-placeholder" id="customerID1" value=""/>
 					</TileContent>
 
                 </GenericTile>
@@ -52,7 +52,7 @@
 					subheader="{i18n>EmployeesReport}"
                     press="onPressEmployees">
 					<TileContent >
-					<NumericContent icon="sap-icon://employee-lookup"/>
+					<NumericContent icon="sap-icon://employee-lookup" id="employeeID1" value=""/>
 					</TileContent>
 					</GenericTile>
                 <GenericTile
@@ -61,7 +61,7 @@
 					subheader="{i18n>Order_DetailsReport}"
                     press="onPressOrderDetails">
 					<TileContent >
-					<NumericContent icon="sap-icon://order-status"/>
+					<NumericContent icon="sap-icon://order-status" id="OrderDetailsID1" value=""/>
 					</TileContent>
 					</GenericTile>
                 
@@ -71,7 +71,7 @@
 					subheader="{i18n>OrdersReport}"
                     press="onPressOrders">
 					<TileContent >
-					<NumericContent icon="sap-icon://sales-order"/>
+					<NumericContent icon="sap-icon://sales-order" id="OrdersID1" value=""/>
 					</TileContent>
 					</GenericTile>
                 
@@ -81,7 +81,7 @@
 					subheader="{i18n>ProductsReport}"
                     press="onPressProducts">
 					<TileContent >
-					<NumericContent icon="sap-icon://product"/>
+					<NumericContent icon="sap-icon://product" id="ProductsID1" value=""/>
 					</TileContent>
 					</GenericTile>
                 
@@ -91,7 +91,7 @@
 					subheader="{i18n>RegionsReport}"
                     press="onPressRegions">
 					<TileContent >
-					<NumericContent icon="sap-icon://map"/>
+					<NumericContent icon="sap-icon://map" id="RegionID1" value=""/>
 					</TileContent>
 					</GenericTile>
 					 
@@ -101,7 +101,7 @@
 					subheader="{i18n>ShippersReport}"
                     press="onPressShippers">
 					<TileContent >
-					<NumericContent icon="sap-icon://shipping-status"/>
+					<NumericContent icon="sap-icon://shipping-status" id="ShipperID1" value=""/>
 					</TileContent>
 					</GenericTile>
 
@@ -111,7 +111,7 @@
 					subheader="{i18n>SuppliersReport}"
                     press="onPressSuppliers">
 					<TileContent >
-					<NumericContent icon="sap-icon://supplier"/>
+					<NumericContent icon="sap-icon://supplier" id="SupplierID1" value=""/>
 					</TileContent>
 					</GenericTile>
 
@@ -121,7 +121,7 @@
 					subheader="{i18n>TerritoriesReport}"
                     press="onPressTerritories">
 					<TileContent >
-					<NumericContent icon="sap-icon://map"/>
+					<NumericContent icon="sap-icon://map" id="TerritoriesID1" value=""/>
 					</TileContent>
 					</GenericTile>
                 
@@ -131,7 +131,7 @@
 					subheader="{i18n>Alphabetical_list_of_products}"
                     press="onPressAlphabeticallistofproducts">
 					<TileContent >
-					<NumericContent icon="sap-icon://drop-down-list"/>
+					<NumericContent icon="sap-icon://drop-down-list" id="ListOfProductsID1" value=""/>
 					</TileContent>
 					</GenericTile>
 
@@ -141,7 +141,7 @@
 					subheader="{i18n>Category_Sales_for_1997}"
                     press="onPressCategorySalesfor1997">
 					<TileContent >
-					<NumericContent icon="sap-icon://group"/>
+					<NumericContent icon="sap-icon://group" id="CategorySalesID1" value=""/>
 					</TileContent>
 					</GenericTile>
 
@@ -151,7 +151,7 @@
 					subheader="{i18n>Current_Product_Lists}"
                     press="onPressCurrentProductLists">
 					<TileContent >
-					<NumericContent icon="sap-icon://group"/>
+					<NumericContent icon="sap-icon://group" id="CurrentProductListID1" value=""/>
 					</TileContent>
 					</GenericTile>
 
@@ -161,7 +161,7 @@
 					subheader="{i18n>Customer_and_Suppliers_by_Cities}"
                     press="onPressCustomerandSuppliersbyCities">
 					<TileContent >
-					<NumericContent icon="sap-icon://shipping-status"/>
+					<NumericContent icon="sap-icon://shipping-status" id="CityID1" value=""/>
 					</TileContent>
 					</GenericTile>
 
@@ -171,7 +171,7 @@
 					subheader="{i18n>Invoices}"
                     press="onPressInvoices">
 					<TileContent >
-					<NumericContent icon="sap-icon://money-bills"/>
+					<NumericContent icon="sap-icon://money-bills" id="InvoicesID1" value=""/>
 					</TileContent>
 					</GenericTile>
                 

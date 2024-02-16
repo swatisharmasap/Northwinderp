@@ -57,10 +57,10 @@
 				<cells>
 					<Text text="{orderDetailsModel>OrderID}"/>
                     <Text text="{orderDetailsModel>ProductID}"/>
-                    <Text text="{orderDetailsModel>UnitPrice}"/>
-                    <Text text="{orderDetailsModel>Quantity}"/>
-                    <Text text="{orderDetailsModel>Discount}"/>
-                    <Text text="{orderDetailsModel>totalPrice}"/>
+                    <Text text="{path:'orderDetailsModel>UnitPrice', formatter:'.numberFormatting'}"/>
+                    <Text text="{path:'orderDetailsModel>Quantity', formatter:'.numberFormatting'}"/>
+                    <Text text="{path:'orderDetailsModel>Discount' , formatter:'.numberFormatting'}"/>
+                    <Text text="{path:'orderDetailsModel>totalPrice', formatter:'.numberFormatting'}"/>
                    
 					
 				</cells>

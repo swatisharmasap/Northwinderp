@@ -1,10 +1,11 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/format/NumberFormat"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller,NumberFormat) {
         "use strict";
 
         return Controller.extend("sap.com.northwinderp.controller.Orders", {
@@ -57,7 +58,17 @@ sap.ui.define([
                   oTableBinding.filter(oFilter);
 
                      
-      }
+      },
+      numberFormatting: function (value) {
+        var oFormat = NumberFormat.getFloatInstance({
+            "groupingEnabled": true,
+            "groupingSeparator": ',',
+            "groupingSize": 3,
+            "decimalSeparator": "."
+        });
+        return oFormat.format(parseFloat(value).toFixed(2));
+
+    }
            
            
         

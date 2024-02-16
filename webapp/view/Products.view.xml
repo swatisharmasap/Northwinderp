@@ -54,13 +54,13 @@
        <Text text="Units In Stock "/>
        </Column>
        <Column >
-       <Text text="Units On Order "/>
+       <Text text="Units On Order"/>
        </Column>
        <Column >
-       <Text text="Reorder Level  "/>
+       <Text text="Reorder Level"/>
        </Column>
        <Column >
-       <Text text="Discontinued  "/>
+       <Text text="Discontinued"/>
        </Column>
        
         </columns>
@@ -80,7 +80,7 @@
                     <Text text="{productsModel>Discontinued}"/>
 					
 				</cells>
-			</ColumnListItem>
+			</ColumnListItem>           
 		</items>
         </Table> 
         </content>

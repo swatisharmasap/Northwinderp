@@ -86,7 +86,7 @@
                     <Text text="{path:'ordersModel>RequiredDate', type:'sap.ui.model.type.Date', formatOptions:{style:'long'}}"/>
                     <Text text="{path:'ordersModel>ShippedDate', type:'sap.ui.model.type.Date', formatOptions:{style:'long'}}"/>
                     <Text text="{ordersModel>ShipVia}"/>
-                     <Text text="{ordersModel>Freight}"/>
+                     <Text text="{path:'ordersModel>Freight',formatter:'.numberFormatting'}"/>
                     <Text text="{ordersModel>ShipName}"/>
                     <Text text="{ordersModel>ShipAddress}"/>
                     <Text text="{ordersModel>ShipCity}"/>
